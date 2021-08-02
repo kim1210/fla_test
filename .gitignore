@@ -149,9 +149,9 @@ cython_debug/
 
 
 # 
-/templates/real_ver
-/templates/test
-/__test_init__.py
-/__real_init__.py
+pybo/templates/real_ver
+pybo/templates/test
+pybo/__test_init__.py
+pybo/__real_init__.py
 pybo.db
 /migrations
