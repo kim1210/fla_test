@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<a href="/signup">회원가입</a>
+<a href="/login">로그인</a>
+<a href="/logout">로그아웃</a>
+
+<div>
+    {% if session['user_id']%}
+    {{session['user_id']}} 로그인 중...
+    {% endif %}
+
+</div>
+
+<a href="/create">글쓰기</a>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if content_list %}
+        <tr>
+            {% for content in content_list %}
+            <td>{{ loop.index }}</td>
+            <td><a href="/detail/{{ content.id }}">{{ content.title }}</a></td>
+            <td>{{content.user_id}}</td>
+        </tr>
+            {% endfor%}
+        
+            {% else %}
+            <td colspan="3">작성된 글이 없습니다.</td>
+            {% endif %}
+        </tbody>
+    </table>
+
+
+
+    
+</div>
+</body>
+</html>
